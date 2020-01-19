@@ -87,8 +87,10 @@ static inline unsigned short TileNumber_texture(unsigned short tilenumber)
 
 struct GROUND_TYPE
 {
-	const char *textureName;
+	std::string textureName;
 	float textureSize;
+	std::string normalMapTextureName;
+	std::string specularMapTextureName;
 };
 
 /* Information stored with each tile */
@@ -118,9 +120,10 @@ struct MAPTILE
 extern SDWORD	mapWidth, mapHeight;
 extern MAPTILE *psMapTiles;
 extern float waterLevel;
-extern GROUND_TYPE *psGroundTypes;
-extern int numGroundTypes;
 extern char *tilesetDir;
+
+const GROUND_TYPE& getGroundType(size_t idx);
+size_t getNumGroundTypes();
 
 #define AIR_BLOCKED		0x01	///< Aircraft cannot pass tile
 #define FEATURE_BLOCKED		0x02	///< Ground units cannot pass tile due to item in the way
@@ -349,9 +352,6 @@ static inline unsigned char terrainType(const MAPTILE *tile)
 /* The size and contents of the map */
 extern SDWORD	mapWidth, mapHeight;
 extern MAPTILE *psMapTiles;
-
-extern GROUND_TYPE *psGroundTypes;
-extern int numGroundTypes;
 
 /*
  * Usage-Example:
