@@ -494,7 +494,7 @@ elseif(Git_FOUND AND _currentDirectoryIsInGitRepo)
 		if(NOT LOGGING_QUIET)
 			message( STATUS "Gathered revision data from Git + Travis-CI environment" )
 		endif()
-	elseif(ENV{TF_BUILD} AND "$ENV{TF_BUILD}" STREQUAL "True")
+	elseif(DEFINED ENV{TF_BUILD} AND "$ENV{TF_BUILD}" STREQUAL "True")
 		# On Azure DevOps
 		_azureCIBuild()
 		if(NOT LOGGING_QUIET)
