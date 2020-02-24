@@ -82,7 +82,7 @@ jobs:
         echo "OUTPUT_DIR=${OUTPUT_DIR}"
         echo "::set-env name=OUTPUT_DIR::${OUTPUT_DIR}"
         mkdir -p "${OUTPUT_DIR}"
-        mv "build/warzone2100.tar.xz" "${OUTPUT_DIR}/warzone2100_src.tar.xz"
+        cp "build/warzone2100.tar.xz" "${OUTPUT_DIR}/warzone2100_src.tar.xz"
         echo "Generated warzone2100 tarball: \"warzone2100_src.tar.xz\""
         echo "  -> SHA512: $(sha512sum "${OUTPUT_DIR}/warzone2100_src.tar.xz")"
         echo "  -> Size (bytes): $(stat -c %s "${OUTPUT_DIR}/warzone2100_src.tar.xz")"
