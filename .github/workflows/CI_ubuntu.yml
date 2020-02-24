@@ -78,7 +78,8 @@ jobs:
         docker run --rm -e MAKEFLAGS -v $(pwd)/extracted/warzone2100:/code ubuntu cmake --build build
     - name: Rename Tarball & Output Info
       run: |
-        OUTPUT_DIR="${GITHUB_WORKSPACE}/output"
+        OUTPUT_DIR="${HOME}/output"
+        echo "OUTPUT_DIR=${OUTPUT_DIR}"
         echo "::set-env name=OUTPUT_DIR::${OUTPUT_DIR}"
         mkdir -p "${OUTPUT_DIR}"
         mv "build/warzone2100.tar.xz" "${OUTPUT_DIR}/warzone2100_src.tar.xz"
