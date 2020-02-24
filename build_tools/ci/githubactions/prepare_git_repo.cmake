@@ -17,8 +17,8 @@ macro(create_all_branches)
 					 OUTPUT_STRIP_TRAILING_WHITESPACE )
 	execute_process(COMMAND ${CMAKE_COMMAND} -E echo "build_head: ${build_head}")
 
-	# "git fetch --prune --unshallow"
-	execute_process(COMMAND ${GIT_EXECUTABLE} fetch --prune --unshallow --progress)
+	# "git fetch --prune"
+	execute_process(COMMAND ${GIT_EXECUTABLE} fetch --prune --progress)
 
 	# also fetch the tags
 	# "git fetch --tags"
