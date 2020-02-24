@@ -539,8 +539,6 @@ if(CACHEFORCE)
 		message( FATAL_ERROR "Option CACHEFORCE declared, but the specified CACHEFILE does not exist at: ${CACHEFILE}" )
 	endif()
 elseif(Git_FOUND AND _currentDirectoryIsInGitRepo)
-	message( STATUS "GITHUB_ACTIONS=${GITHUB_ACTIONS}" )
-	message( STATUS "GITHUB_REF=${GITHUB_REF}" )
 	if(DEFINED ENV{CI} AND "$ENV{CI}" STREQUAL "True" AND DEFINED ENV{APPVEYOR} AND "$ENV{APPVEYOR}" STREQUAL "True")
 		# On AppVeyor
 		_appVeyorBuild()
