@@ -9,6 +9,6 @@ DEBIAN_FRONTEND=noninteractive apt-get -y install libpng-dev libsdl2-dev libopen
 # Initialize Git submodules
 git submodule update --init --recursive
 
-# MuseDev seems to currently run in-source builds
-# Truncate the DisallowInSourceBuilds.cmake file to allow this (for now)
-echo "" > ./cmake/DisallowInSourceBuilds.cmake
+# # MuseDev seems to currently run in-source builds
+# # Truncate the DisallowInSourceBuilds.cmake file to allow this (for now)
+# echo "" > ./cmake/DisallowInSourceBuilds.cmake
