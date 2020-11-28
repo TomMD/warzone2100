@@ -1,0 +1,3 @@
+setup = ".ci/muse/setup.sh"
+build = "cmake"
+tools = [ "infer" ]

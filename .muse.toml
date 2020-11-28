@@ -1,3 +1,2 @@
 setup = ".ci/muse/setup.sh"
-build = "MUSEDEV_CI=true cmake -Bbuild -DCMAKE_EXPORT_COMPILE_COMMANDS=ON ."
-tools = [ "infer" ]
+tools = [ ]

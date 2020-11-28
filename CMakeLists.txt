@@ -770,8 +770,3 @@ if(CPACK_COMMAND)
 	)
 	set_property(TARGET dist PROPERTY FOLDER "_WZAliasTargets")
 endif()
-
-# HACK: Fix for MuseDev CI
-if (DEFINED ENV{MUSEDEV_CI} AND "$ENV{MUSEDEV_CI}" MATCHES "true")
-	execute_process(COMMAND ${CMAKE_COMMAND} -E copy "${CMAKE_BINARY_DIR}/compile_commands.json" "${PROJECT_SOURCE_DIR}/compile_commands.json")
-endif()
