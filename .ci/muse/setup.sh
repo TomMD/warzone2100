@@ -8,7 +8,10 @@ DEBIAN_FRONTEND=noninteractive apt-get -y install libpng-dev libsdl2-dev libopen
 
 echo "Installing Vulkan SDK..."
 echo "wget lunarg signing-key"
-wget -qO - https://packages.lunarg.com/lunarg-signing-key-pub.asc| apt-key add -
+wget -qO - https://packages.lunarg.com/lunarg-signing-key-pub.asc > /tmp/lunarg-signing-key-pub.asc
+cat /tmp/lunarg-signing-key-pub.asc
+apt-key add /tmp/lunarg-signing-key-pub.asc
+apt-key list
 echo "wget sources.list.d"
 wget -qO /etc/apt/sources.list.d/lunarg-vulkan-1.2.148-focal.list https://packages.lunarg.com/vulkan/1.2.148/lunarg-vulkan-1.2.148-focal.list
 echo "apt-get -u update"
