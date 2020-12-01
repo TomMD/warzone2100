@@ -10,6 +10,8 @@ DEBIAN_FRONTEND=noninteractive apt-get -y install libpng-dev libsdl2-dev libopen
 git submodule update --init --recursive
 
 mkdir build
+cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -B ./build .
+mv build/compile_commands.json ./
 
 # # MuseDev seems to currently run in-source builds
 # # Truncate the DisallowInSourceBuilds.cmake file to allow this (for now)

@@ -1,2 +1,2 @@
 setup = ".ci/muse/setup.sh"
-build = "cmake -B ./build"
+build = "compdb"
